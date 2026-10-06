@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Rift Breaker: Fist of the Hollow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div id="hud" class="hud hidden">
+        <div class="top-row">
+          <div class="stat-box">
+            <span>Wave</span>
+            <strong id="waveLabel">1</strong>
+          </div>
+          <div class="stat-box">
+            <span>Score</span>
+            <strong id="scoreLabel">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>Forge</span>
+            <strong id="coinsLabel">0</strong>
+          </div>
+        </div>
+        <div class="bars">
+          <div class="bar-wrap hp-wrap">
+            <label>Health</label>
+            <div class="bar"><div id="hpBar" class="fill hp-fill"></div></div>
+          </div>
+          <div class="bar-wrap stamina-wrap">
+            <label>Stamina</label>
+            <div class="bar"><div id="staminaBar" class="fill stamina-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="420" height="760"></canvas>
+
+      <div id="homeScreen" class="overlay visible">
+        <div class="panel">
+          <p class="eyebrow">Rift Breaker</p>
+          <h1>Fist of the Hollow</h1>
+          <p class="tagline">Enter the broken districts, survive the waves, and forge your strength.</p>
+
+          <div class="home-stats">
+            <div>
+              <span>High Score</span>
+              <strong id="highScoreLabel">0</strong>
+            </div>
+            <div>
+              <span>Best Wave</span>
+              <strong id="bestWaveLabel">1</strong>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button id="startBtn" class="primary">Enter the Rift</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="gameOverScreen" class="overlay hidden">
+        <div class="panel small-panel">
+          <p class="eyebrow">Run Ended</p>
+          <h2>Fighter Down</h2>
+          <div class="results">
+            <div><span>Score</span><strong id="finalScore">0</strong></div>
+            <div><span>Wave</span><strong id="finalWave">1</strong></div>
+            <div><span>Forge Coins</span><strong id="finalCoins">0</strong></div>
+          </div>
+          <div class="button-row">
+            <button id="restartBtn" class="primary">Fight Again</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="upgradeScreen" class="overlay hidden">
+        <div class="panel small-panel">
+          <p class="eyebrow">The Forge</p>
+          <h2>Upgrade Your Build</h2>
+          <div class="upgrade-list">
+            <button class="upgrade-btn" data-upgrade="power">Power <span id="powerLvl">1</span></button>
+            <button class="upgrade-btn" data-upgrade="speed">Speed <span id="speedLvl">1</span></button>
+            <button class="upgrade-btn" data-upgrade="vitality">Vitality <span id="vitalityLvl">1</span></button>
+            <button class="upgrade-btn" data-upgrade="fury">Fury <span id="furyLvl">1</span></button>
+          </div>
+          <div class="button-row compact">
+            <button id="resumeBtn" class="primary">Continue</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="touchControls" class="touch-controls hidden">
+        <div class="dpad">
+          <button data-key="ArrowUp">↑</button>
+          <button data-key="ArrowLeft">←</button>
+          <button data-key="ArrowDown">↓</button>
+          <button data-key="ArrowRight">→</button>
+        </div>
+        <button id="punchBtn" class="punch-button">PUNCH</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
